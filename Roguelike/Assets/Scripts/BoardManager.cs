@@ -57,9 +57,9 @@ public class BoardManager : MonoBehaviour
                 GameObject toInstantiate = floorTiles[Random.Range(0, floorTiles.Length)];
                 if (x == -1 || x == columns || y == -1 || y == rows)
                 {
-                    toInstatiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
+                    toInstantiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
                 }
-                GameObject instance = Instatiate(toInstantiate, new Vector3(x, y, 0f), Ouaternion.identity) as GameObject;
+                GameObject instance = Instantiate(toInstantiate, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
 
                 instance.transform.SetParent(boardHolder);
             }
@@ -82,7 +82,7 @@ public class BoardManager : MonoBehaviour
         {
             Vector3 randomPosition = RandomPosition();
             GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
-            Instatiate(tileChoice, randomPosition, Quaternion.identity);
+            Instantiate(tileChoice, randomPosition, Quaternion.identity);
         }
     }
 
